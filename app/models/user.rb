@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
   has_many :votes
   has_many :questions
 
-  validates_presence_of :user_name, :email, :hash_password
+  validates_presence_of :user_name, :email, :hashed_password
   validates_uniqueness_of :email
-  validates :password_length, :valid_email
+  validate :password_length, :valid_email
  
   def password
     @password ||= Password.new(hashed_password)
