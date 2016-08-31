@@ -3,10 +3,12 @@ get '/questions/new' do
   erb :'/questions/new'
 end
 
-post '/questions/new' do
-  @question = Question.new(user_id: params[:user_id], title: params[:title], content: params[:content])
+post '/questions' do
+  @question = Question.new(user_id: 1, title: params[:title], content: params[:content])
+
+  # add back: user_id: session[:user_id],
   if @question.save
-    redirect '/questions/index'
+    redirect '/questions'
   else
     @errors = @question.errors.full_messages
     redirect '/questions/new'
@@ -14,29 +16,30 @@ post '/questions/new' do
 end
 
 # READ
-# show ONE
+# show ALL
 get '/questions' do
   @questions = Question.all
   erb :'/questions/index'
 end
-#show ALL
+#show ONE
 get '/questions/:id' do
   @question = Question.find(params[:id])
-  erb :'/questions/#{@question.id}'
+  erb :'/questions/show'
 end
 
 # UPDATE
 get '/questions/:id/edit' do
-  erb :'/questions/#{params[:id]}/edit'
+  @question = Question.find(params[:id])
+  erb :"/questions/edit"
 end
 
 put '/questions/:id' do
   @question = Question.find(params[:id])
   if @question.update_attributes(title: params[:title], content: params[:content])
-    redirect '/questions/#{params[:id]}'
+    redirect "/questions/#{params[:id]}"
   else
     @errors = @questions.errors.full_messages
-    redirect '/questions/#{params[:id]}/edit'
+    redirect "/questions/#{params[:id]}/edit"
   end
 end
 
