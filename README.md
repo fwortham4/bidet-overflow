@@ -20,9 +20,6 @@
 2. _User_ have access to all above plus:
   - able to post a question
   - able to answer questions
-  - able to respond to:
-    - questions
-    - answers
   - able to post comments:
     - to questions
     - to answers
