@@ -1,30 +1,45 @@
-> **Note**: This branch (master) contains a skeleton without any app code, perfect for creating a _new_ application or challenge. If you're looking for an example app built with this skeleton, take a look at the [example](/../..//tree/example) branch which includes basic CRUD and RSpec tests.
+# Team Toilet Overflow
 
-### Purpose
-The Sinatra Skeleton:
+- Forrest, aka Gump
+- Benedict, aka Eggs
+- Michelle, aka Legible
+- Sohel, aka Bidet
+- Thuy, The Overnighter, aka Thee
 
-1. Provides a foundation for building challenges or creating a new Sinatra application.
-2. Demonstrates a reasonable set of practices around building Sinatra applications.
-3. Eases the transition to Rails for Dev Bootcamp students
+-------------------------
+## MVP
 
-### Quickstart
+1. _User_ not registered has access to:
+  - View:
+    - questions
+    - answers
+    - votes
+    - comments:
+      - for questions
+      - for answers
+2. _User_ have access to all above plus:
+  - able to post a question
+  - able to answer questions
+  - able to respond to:
+    - questions
+    - answers
+  - able to post comments:
+    - to questions
+    - to answers
+  - able to vote (downvotes/upvotes) only once for
+    - questions
+    - answers
+    - comments
+  - _User_ who posted question can declare _Best Question_
 
-1.  `bundle install`
-2.  `shotgun config.ru`
+###Stretch goals
 
-As needed, create models & migrations with the `rake` tasks:
+1. Responses should be sorted chronologically, with oldest first.
+2. Answers should be sorted by "the best" first, followed by most highly-voted.
 
-```
-rake generate:migration  # Create an empty migration in db/migrate, e.g., rake generate:migration NAME=create_tasks
-rake generate:model      # Create an empty model in app/models, e.g., rake generate:model NAME=User
-```
+1. Users should be able to see questions sorted three ways:
+  - highest-voted
+  - most recent
+  - "trending"
 
-### Contributing
-
-We would love for you to help make the skeleton more awesome, There are three ways to contribute:
-
-1. Ask for a bug fix or enhancement!
-2. Submit a pull request for a bug fix or enhancement!
-3. Code review an open pull request!
-
-Be prepared to give and receive specific, actionable, and kind feedback!
+## User Stories
