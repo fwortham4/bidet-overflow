@@ -41,5 +41,3 @@
   - highest-voted
   - most recent
   - "trending"
-
-## User Stories
