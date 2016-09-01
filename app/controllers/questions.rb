@@ -33,13 +33,13 @@ get '/questions/:id/edit' do
   erb :"/questions/edit"
 end
 
-put '/questions/:id' do
+put '/questions/:id' do  # response to clicking button
   @question = Question.find(params[:id])
   if @question.update_attributes(title: params[:title], content: params[:content])
     redirect "/questions/#{params[:id]}"
   else
     @errors = @questions.errors.full_messages
-    redirect "/questions/#{params[:id]}/edit"
+    erb :"/questions/edit" # need to erb errors otherwise, errors instance variable will get lost
   end
 end
 
