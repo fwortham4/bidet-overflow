@@ -1,7 +1,8 @@
-<h1><%= @question.title %></h1>
+<h1><%= @question.id %>. <%= @question.title %></h1>
 
 <p><%= @question.content %></p>
 
-<!-- <p> User:<%= @question.id %></p> -->
+<!-- Add an Answer button here to the /answers/new form. -->
+<a href="/questions/<%= @question.id %>/answers/new">Add an Answer</a>
 
 <a href="/questions/<%= @question.id %>/edit">Edit</a>
