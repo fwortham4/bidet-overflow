@@ -1,0 +1,19 @@
+<h1>Ask a Question</h1>
+
+<!-- to handle errors with validations ?
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %> -->
+
+<form method="post" action="/questions">
+
+  <label for="title">Title</label>
+    <input name="title" type="text"/><br>
+
+  <label for="content">Content</label>
+    <textarea name="content"></textarea>
+
+  <button type="submit">Submit</button>
+</form>
