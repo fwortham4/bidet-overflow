@@ -24,16 +24,16 @@
     <ul class="right">
       <li><a href="/">Home</a></li>
      <% if current_user %>
-          <li><a href="/users/<%=current_user.id%>"><%= current_user.name.capitalize%>'s profile</a></li>
+          <li><a href="/users/<%=current_user.id%>"><%= current_user.user_name.capitalize%>'s profile</a></li>
         <li>
-          <form method="post" action="#">
+          <form method="post" action="/sessions/logout">
             <input type="hidden" name="_method" value="delete">
             <input type="submit" value="Logout">
           </form>
         </li>
       <% else %>
-        <li><a href="#">Register</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="/users/new">Register</a></li>
+        <li><a href="/sessions/new">Login</a></li>
       <% end %>
     </ul>
   </header>

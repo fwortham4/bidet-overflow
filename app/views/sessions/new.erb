@@ -1,9 +1,12 @@
-
-<div class="container">
 <h1>Login to Existing Account</h1>
 
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
 
-<form action='/users/' method='post'>
+<form action='/sessions' method='post'>
     <label>E-mail</label>
     <input type='text' name='user[email]'><br>
     <label>Password</label>
