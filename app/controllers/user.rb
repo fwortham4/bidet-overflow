@@ -23,11 +23,9 @@ post "/users/" do
   end
 end
 
-get "/users/:id" do
+get '/users/:id' do
+  authorized!
   @user = User.find(params[:id])
-  if @user
-    erb :"/users/show"
-  else
-    redirect
-  end
+  erb :'/users/show'
 end
+

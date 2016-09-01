@@ -1,1 +1,15 @@
-here is where the view for the user login will go
+<h1>Login to Existing Account</h1>
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<form action='/sessions' method='post'>
+    <label>E-mail</label>
+    <input type='text' name='user[email]'><br>
+    <label>Password</label>
+    <input type='password' name='user[password]'><br>
+    <input type='submit' value='Login'>
+  </form>
