@@ -1,5 +1,10 @@
 <h1>Edit Question</h1>
 
+<!-- to handle errors with validations ?
+<% @errors.each do |error| %>
+  <%= error %>
+<% end %> -->
+
 <form method="post" action="/questions/<%= @question.user_id %>">
 <input type="hidden" name="_method" value="put"/>
 
