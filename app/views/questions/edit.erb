@@ -1,12 +1,13 @@
 <h1>Edit Question</h1>
 
 <form method="post" action="/questions/<%= @question.user_id %>">
+<input type="hidden" name="_method" value="put"/>
 
   <label for="title">Title</label>
-    <input name="title" type="text"/><br>
+    <input name="title" type="text" value="<%= @question.title %>"/><br>
 
   <label for="content">Content</label>
-    <textarea name="content"></textarea>
+    <textarea name="content"><%= @question.content %></textarea>
 
   <button type="submit">Edit</button>
 </form>
