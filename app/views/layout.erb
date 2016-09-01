@@ -18,8 +18,27 @@
   <title></title>
 </head>
 <body>
-<div id="content">
-  <%= yield %>
-</div>
+ <header>
+    <h1 class="left">Logo </h1>
+  <!-- <img id="#" class="left" src="#" alt="#" > for logo --> 
+    <ul class="right">
+      <li><a href="/">Home</a></li>
+     <% if current_user %>
+          <li><a href="/users/<%=current_user.id%>"><%= current_user.name.capitalize%>'s profile</a></li>
+        <li>
+          <form method="post" action="#">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Logout">
+          </form>
+        </li>
+      <% else %>
+        <li><a href="#">Register</a></li>
+        <li><a href="#">Login</a></li>
+      <% end %>
+    </ul>
+  </header>
+  <main class="container">
+    <%= yield %>
+  </main>
 </body>
 </html>
