@@ -6,9 +6,7 @@
   <% end %>
 <% end %>
 
-
-
-<form method="POST" action="/answers">
+<form method="POST" action="/questions/<%= @question.id %>/answers">
   <textarea rows="4" cols="50" name='content' placeholder='Content'></textarea><br>
 
   <input type="submit" value="Add New Answer!">

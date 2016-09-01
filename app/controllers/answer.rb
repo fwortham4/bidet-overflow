@@ -10,10 +10,10 @@ end
 
 post "/questions/:q_id/answers" do
 
-  @answer = Answer.new(cotent: params[:content], question_id: params[:q_id], user_id: session[:user_id])
+  @answer = Answer.new(content: params[:content], question_id: params[:q_id], user_id: session[:user_id])
 
   if @answer.save
-    redirect "/questions/index"
+    redirect "/questions/#{params[:q_id]}"
   else
     @error = @answer.errors.full_message
     erb :"/answers/new"
