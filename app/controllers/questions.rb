@@ -4,7 +4,7 @@ get '/questions/new' do
 end
 
 post '/questions' do
-  @question = Question.new(user_id: 1, title: params[:title], content: params[:content])
+  @question = Question.new(user_id: session[:user_id], title: params[:title], content: params[:content])
 
   # add back: user_id: session[:user_id],
   if @question.save

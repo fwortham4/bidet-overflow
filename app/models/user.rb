@@ -25,6 +25,15 @@ class User < ActiveRecord::Base
     end
   end
 
+  def authenticate(email, password_attempt)
+    user = User.find_by(email: email)
+    if user.password == password_attempt
+      true
+    else
+      false
+    end
+  end
+
   def valid_email
     if !self.email.include? "@"
       errors.add(:email, "must contain @ symbol to be an email!")
